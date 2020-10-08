@@ -5,32 +5,28 @@ public class StatsService {
 
     public long findSum(long[] values) {
         long proseeds = 0;
-        for(int i=0; i<values.length; i++) {
-            proseeds=proseeds+values[i];
+        for (int i = 0; i < values.length; i++) {
+            proseeds = proseeds + values[i];
         }
         return proseeds;
     }
 
-    public long findAvgSales(long[] values) {
-        long proseeds = 0;
-        long avgsales;
-        for(int i=0; i<values.length; i++) {
-            proseeds=proseeds+values[i];
-        }
-        avgsales = proseeds / values.length;
+    public double findAvgSales(long[] values) {
+        long proseeds = findSum(values);
+        double avgsales = proseeds / values.length;
 
         return avgsales;
     }
 
     public long findMaxMonth(long[] values) {
-            long maxMonth = 0;
-            long currentValue = values[0];
-            for (int i = 0; i < values.length; i++) {
-                if (currentValue <= values[i]) {
-                    maxMonth = i + 1;
-                    currentValue = values[i];
-                }
+        long maxMonth = 0;
+        long currentValue = values[0];
+        for (int i = 0; i < values.length; i++) {
+            if (currentValue <= values[i]) {
+                maxMonth = i + 1;
+                currentValue = values[i];
             }
+        }
         return maxMonth;
     }
 
@@ -40,7 +36,7 @@ public class StatsService {
         long currentValue = values[0];
         for (int i = 0; i < values.length; i++) {
             if (currentValue >= values[i]) {
-                minMonth = i +1;
+                minMonth = i + 1;
                 currentValue = values[i];
             }
         }
@@ -49,7 +45,7 @@ public class StatsService {
 
     public long findUnderAvgSales(long[] values) {
         long listUASales = 0;
-        long avgSales = findAvgSales(values);
+        double avgSales = findAvgSales(values);
         for (long currentValue : values) {
             if (currentValue < avgSales) listUASales++;
         }
@@ -58,7 +54,7 @@ public class StatsService {
 
     public long findUpAvgSum(long[] values) {
         long listUpASales = 0;
-        long avgSales = findAvgSales(values);
+        double avgSales = findAvgSales(values);
         for (long currentValue : values) {
             if (currentValue > avgSales) listUpASales++;
         }

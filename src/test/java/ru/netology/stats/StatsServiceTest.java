@@ -9,7 +9,6 @@ public class StatsServiceTest {
     long[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
     @Test
-
     void shoudFindProseeds() {
 
         StatsService service = new StatsService();
@@ -18,24 +17,22 @@ public class StatsServiceTest {
         long expected = 180;
 
         assertEquals(expected, proseeds);
-        System.out.println ("Сумма всех продаж =" + proseeds);
+        System.out.println("Сумма всех продаж =" + proseeds);
     }
 
     @Test
-
     void shoudFindAverageSales() {
 
         StatsService service = new StatsService();
 
-        long avgsales = service.findAvgSales(values);
+        double avgsales = service.findAvgSales(values);
         long expected = 15;
 
         assertEquals(expected, avgsales);
-        System.out.println ("Средняя сумма продаж =" + avgsales);
+        System.out.println("Средняя сумма продаж =" + avgsales);
     }
 
     @Test
-
     void shoudFindMaxMonth() {
 
         StatsService service = new StatsService();
@@ -44,7 +41,7 @@ public class StatsServiceTest {
         long expected = 8;
 
         assertEquals(expected, maxMonth);
-        System.out.println ("Месяц с пиком продаж =" + maxMonth);
+        System.out.println("Месяц с пиком продаж =" + maxMonth);
     }
 
     @Test
@@ -54,7 +51,7 @@ public class StatsServiceTest {
         long expected = 9;
 
         assertEquals(expected, minMonth);
-        System.out.println ("Месяц минимальных продаж =" + minMonth);
+        System.out.println("Месяц минимальных продаж =" + minMonth);
     }
 
     @Test
@@ -64,7 +61,7 @@ public class StatsServiceTest {
         long expected = 5;
 
         assertEquals(expected, listUASales);
-        System.out.println ("Месяцев с продажами ниже среднего =" + listUASales);
+        System.out.println("Месяцев с продажами ниже среднего =" + listUASales);
     }
 
     @Test
@@ -74,10 +71,8 @@ public class StatsServiceTest {
         long expected = 5;
 
         assertEquals(expected, listUpASales);
-        System.out.println ("Месяцев с продажами выше среднего =" + listUpASales);
+        System.out.println("Месяцев с продажами выше среднего =" + listUpASales);
     }
-
-
 
 
 }
