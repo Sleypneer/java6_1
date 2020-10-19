@@ -13,7 +13,7 @@ public class StatsService {
 
     public double findAvgSales(long[] values) {
         long proseeds = findSum(values);
-        double avgsales = proseeds / values.length;
+        double avgsales = proseeds /(double) values.length;
 
         return avgsales;
     }
